@@ -1,0 +1,169 @@
+
+
+:root{
+    --primary-color: #0A2F8C;
+    --color-white: #FFF;
+    --color-background: #f6f6f9;
+    --color-dark-variant:#677483;
+    --color-light: rgba(132,139,200,.18);
+    --color-dark: #363949;
+    --white-glass: rgba(255,255,255,0.9);
+    --border-light-color: #DDD;
+    --primme-color-hover: #0A2F8C;
+
+
+    --card-border-radius: 2rem;
+    --card-padding: 1.8rem;
+    --box-shadow: 0 .1rem .5rem var(--color-light);
+}
+/*----- Dark THEME VARIABLE -----*/
+.dark-theme-variables{
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-variant:#a3bdcc;
+    --color-light: rgba(0,0,0,.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+    --dark-glass: rgba(10, 25, 41, 0.9);
+    --border-light-color: #303030;
+    --primme-color-hover: #edeffd;
+}
+
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primme-color-hover) var(--color-light);
+}
+body::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--primme-color-hover) ;
+    border-radius: 6px;
+}
+/*============================================*/
+.sidebar__utu{
+    position: fixed;
+    left: 0rem;
+    top: 0rem;
+    background-color: var(--white-glass);
+    height: 100vh;
+    width: 25rem;
+    -webkit-backdrop-filter: blur(35px);
+            backdrop-filter: blur(35px);
+    z-index: 100;
+    overflow-y: auto;
+    -webkit-transition: all .8s ease;
+    -o-transition: all .8s ease;
+    transition: all .8s ease;
+    -webkit-box-shadow: 1rem 3rem 4rem var(--color-light);
+            box-shadow: 1rem 3rem 4rem var(--color-light);
+    transform: translateX(-100%);
+
+}
+.sidebar__utu .top__bar{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0 .5rem;
+    background-color: #FFF;
+    margin-bottom: 1rem;
+}
+.sidebar__utu .top__bar .close_bar{
+    color: #000;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.sidebar__utu .list__bar{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 0.5rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding-left: 0rem;
+}
+.sidebar__utu .nav-item{
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+.sidebar__utu .nav-link{
+    color: var(--primme-color-hover);
+    padding: 0.7rem 0.5rem;
+    font-size: 1.2rem;
+    width: 100%;
+    font-weight: 600;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+.sidebar__utu .nav-item:hover .nav-link,
+.sidebar__utu .nav-item.active .nav-link{
+    padding-left: 1rem;
+}
+
+.sidebar__utu .nav-item.active{
+    background-color: var(--color-light);
+}
+.sidebar__utu .nav-item::before{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: var(--primme-color-hover);
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    opacity: 0;
+    -webkit-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+.sidebar__utu .nav-item:hover{
+    background-color: var(--color-light);
+}
+.sidebar__utu .nav-item:hover:before,
+.sidebar__utu .nav-item.active:before{
+    width: 100%;
+    opacity: 1;
+}
+.nav-item .material-icons-outlined{
+    color: var(--primme-color-hover);
+}
+
+.show_bar{
+    display: inline-block;
+    transform: translateX(0%);
+}
